@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cockpit Audibene — comment s'en servir</title>
+  <link rel="icon" href="./icons/icon48.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="./tuto.css" />
+</head>
+<body>
+<main>
+  <div class="hero">
+    <img src="./icons/icon128.png" alt="" />
+    <div>
+      <h1>Comment s'en servir</h1>
+      <p class="sub" style="margin:0">Un écran = une tâche. Tout part de la fiche Salesforce ouverte.</p>
+    </div>
+  </div>
+  <nav class="onglets" aria-label="Pages">
+    <a href="./index.html">← Installer</a>
+    <a class="on" href="./utiliser.html" aria-current="page">Comment s'en servir</a>
+  </nav>
+
+  <nav class="sommaire" aria-label="Sommaire">
+    <a href="#fiche">Fiche</a><a href="#mv">Message vocal</a><a href="#cosi">COSI</a><a href="#anamnese">Anamnèse</a>
+    <a href="#mails">Mails</a><a href="#modele">Créer un modèle</a><a href="#chat">Chat partenaire</a><a href="#orl">ORL Finder</a>
+    <a href="#partenaires">Partenaires</a><a href="#doctolib">Doctolib / Acuitis</a><a href="#reglages">Réglages</a><a href="#maj">Mise à jour</a>
+  </nav>
+
+  <section class="card ecran" id="fiche">
+    <div>
+      <h2>Fiche</h2>
+      <p>Ouvre une Piste ou une Opportunité : Cockpit lit la fiche tout seul et te propose les écrans utiles.</p>
+      <p>Une saisie laissée en cours est marquée <b>Reprendre</b> : tu la retrouves telle quelle.</p>
+      <p class="note">↻ relit la fiche si tu viens de la modifier dans Salesforce.</p>
+    </div>
+    <figure><img src="./images/fiche-reprendre.png" alt="Écran Fiche : nom du patient, bouton Message vocal, liste des écrans avec la mention Reprendre sur COSI" /></figure>
+  </section>
+
+  <section class="card ecran" id="mv">
+    <div>
+      <h2>Message vocal → non joignable</h2>
+      <p>Le patient ne répond pas ? Un clic sur <b>Message vocal → non joignable</b> : Cockpit écrit le commentaire MV, enregistre, puis passe la Piste en « non joignable ».</p>
+      <p class="note">Raccourci : <b>Ctrl + Shift + M</b>. Le bouton <b>MV</b> reste en haut sur tous les écrans.</p>
+    </div>
+    <figure><img src="./images/fiche.png" alt="Écran Fiche avec le bouton Message vocal → non joignable" /></figure>
+  </section>
+
+  <section class="card ecran" id="cosi">
+    <div>
+      <h2>COSI</h2>
+      <p>Clique les puces qui décrivent le patient, puis <b>Appliquer</b> : les champs de l'onglet Anamnèse de Salesforce sont remplis.</p>
+      <p class="note">Les puces restent cochées tant que tu n'as pas appliqué.</p>
+    </div>
+    <figure><img src="./images/cosi.png" alt="Écran COSI : puces à cocher et bouton Appliquer" /></figure>
+  </section>
+
+  <section class="card ecran" id="anamnese">
+    <div>
+      <h2>Anamnèse</h2>
+      <p>Choisis la situation (dépistage, 1er RDV…) : le texte se prépare avec ton nom et ta signature.</p>
+      <p>Copie le résumé Salesforce puis <b>Coller le résumé</b> : il se glisse au milieu. Puis <b>Écrire</b> : le texte part dans « Remarques générales » de la fiche.</p>
+      <p class="note">Tu peux corriger le texte directement dans l'aperçu avant d'écrire.</p>
+    </div>
+    <figure><img src="./images/anamnese.png" alt="Écran Anamnèse : situations, aperçu du texte, bouton Écrire dans la fiche" /></figure>
+  </section>
+
+  <section class="card ecran" id="mails">
+    <div>
+      <h2>Mails</h2>
+      <p>Sur une Opportunité : choisis <b>Patient</b> ou <b>Partenaire</b>, puis un modèle. Le nom est déjà rempli depuis la fiche.</p>
+      <p>Complète ce qui manque (date, heure…), puis <b>Insérer dans Salesforce</b> : le mail s'ouvre prêt à envoyer, avec le bon destinataire.</p>
+      <p class="note">Un modèle SMS se copie en un clic : <b>Copier le SMS</b>.</p>
+    </div>
+    <figure><img src="./images/mails.png" alt="Écran Mails : choix Patient ou Partenaire, modèle choisi, champs à compléter, bouton Insérer dans Salesforce" /></figure>
+  </section>
+
+  <section class="card ecran" id="modele">
+    <div>
+      <h2>Créer ou modifier un modèle</h2>
+      <ol>
+        <li>Dans Mails, clique <b>+</b> (ou le crayon sur un modèle existant).</li>
+        <li>Donne un titre, choisis Patient ou Partenaire, E-mail ou SMS, écris ton texte.</li>
+        <li><b>Enregistrer</b>. Le modèle est dans ta liste.</li>
+      </ol>
+      <p>Pour insérer ce qui change à chaque fois, clique une variable : <span class="var">{{nom}}</span> <span class="var">{{date}}</span> <span class="var">{{heure}}</span> <span class="var">{{nom partenaire}}</span> <span class="var">{{nom_conseiller}}</span>. Cockpit les remplit au moment d'envoyer.</p>
+      <p class="astuce">Écris <b>patient(e)</b> ou <b>il(elle)</b> : Cockpit choisit la bonne forme selon le genre du patient.</p>
+    </div>
+    <figure><img src="./images/modele-nouveau.png" alt="Nouveau modèle : titre, Patient ou Partenaire, E-mail ou SMS, variables à cliquer, texte du mail" /></figure>
+  </section>
+
+  <section class="card ecran" id="chat">
+    <div>
+      <h2>Chat partenaire</h2>
+      <p>Sur une Opportunité : choisis un texte, puis <b>Envoyer dans Chat Partenaire</b>. Il part dans le fil Chatter du partenaire.</p>
+      <p class="note">Le <b>+</b> ajoute tes propres textes.</p>
+    </div>
+    <figure><img src="./images/chat-partenaire.png" alt="Écran Chat partenaire : textes au choix, aperçu, bouton Envoyer dans Chat Partenaire" /></figure>
+  </section>
+
+  <section class="card ecran" id="orl">
+    <div>
+      <h2>ORL Finder</h2>
+      <p>Sur une Piste : les ORL proches du patient avec leur prochain créneau Doctolib, les plus rapides en tête.</p>
+      <p>Pour chacun : téléphone, <b>Prendre RDV</b>, <b>Itinéraire</b>. Le bouton <b>Message type</b> copie la question à poser au cabinet.</p>
+      <p class="note">Filtre par délai ou par secteur, ou tape un nom de ville.</p>
+    </div>
+    <figure><img src="./images/orl-finder.png" alt="Écran ORL Finder : filtres, TOP 3 des ORL avec créneau, téléphone, Prendre RDV, Itinéraire" /></figure>
+  </section>
+
+  <section class="card ecran" id="partenaires">
+    <div>
+      <h2>Partenaires</h2>
+      <p>Sur une Piste : les partenaires de l'onglet Partner Search, avec leurs premiers créneaux Doctolib ou Acuitis.</p>
+      <p>Clique une heure ou <b>Réserver</b> : la page de prise de rendez-vous s'ouvre. Le commentaire du partenaire te dit quel motif choisir.</p>
+    </div>
+    <figure><img src="./images/partenaires.png" alt="Écran Partenaires : partenaires de la Piste avec leurs créneaux et le bouton Réserver" /></figure>
+  </section>
+
+  <section class="card ecran" id="doctolib">
+    <div>
+      <h2>Doctolib / Acuitis</h2>
+      <p>Sur un formulaire de prise de rendez-vous : clique <b>Coller Prénom Nom</b>, les champs du patient se remplissent.</p>
+      <p class="note">Cockpit garde en mémoire les dernières fiches ouvertes dans Salesforce.</p>
+    </div>
+    <figure><img src="./images/doctolib.png" alt="Sur Doctolib : bouton Coller Alice Essai sur Doctolib" /></figure>
+  </section>
+
+  <section class="card ecran" id="reglages">
+    <div>
+      <h2>Réglages</h2>
+      <p>La roue ⚙ en haut à droite. Mets ton <b>nom</b> et ton <b>téléphone</b> : ils signent tes messages. Tu peux aussi régler tes signatures et le pied de page des mails.</p>
+      <p>Dans <b>Données</b> : <b>Partager mes modèles</b> crée un fichier à donner à un collègue ; <b>Importer un fichier</b> récupère les modèles d'un collègue.</p>
+    </div>
+    <figure><img src="./images/reglages-donnees.png" alt="Réglages, partie Données : Choisir un dossier, Importer un fichier, Partager mes modèles" /></figure>
+  </section>
+
+  <section class="card" id="maj">
+    <h2>Mise à jour</h2>
+    <p>Télécharge le nouveau zip, remplace le contenu du dossier, puis clique <b>↻</b> sur la carte Cockpit dans <code>edge://extensions</code>. Tes modèles et réglages sont conservés.</p>
+    <figure><img src="./images/mise-a-jour.png" alt="Carte de l'extension Cockpit Audibene avec le bouton ↻" /></figure>
+  </section>
+
+  <footer>
+    <a href="./index.html">Installer</a> · <a href="./privacy.html">Politique de confidentialité</a> · Une question ? Demande à Benjamin.
+  </footer>
+</main>
+</body>
+</html>
