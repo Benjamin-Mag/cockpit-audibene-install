@@ -38,5 +38,7 @@ ol { padding-left: 22px; margin: 0; } ol li { margin: 8px 0; }
 .sommaire a { background:var(--surface); border:1px solid var(--border); border-radius: 10px; padding: 9px 12px; text-decoration:none; color:var(--accent-strong); font-weight:600; font-size: 14px; transition: background .25s, border-color .25s; }
 .sommaire a:hover { background: var(--accent-soft); border-color: var(--accent); }
 .astuce { background: var(--warn-soft); border-radius: 10px; padding: 10px 14px; font-size: 14px; }
+.attention { background: var(--warn-soft); border-color: #ead7ae; border-left: 5px solid var(--warn); }
+.attention ul { padding-left: 22px; margin: 0; } .attention li { margin: 8px 0; }
 footer { color: var(--muted); font-size: 13px; text-align:center; margin-top: 40px; }
 footer a { color: var(--accent); }
